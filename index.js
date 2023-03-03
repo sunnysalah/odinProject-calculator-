@@ -46,7 +46,7 @@ let operation;
 //operation functions
 
 function add(a,b) {
-    return a + b;
+    return parseFloat(a) + parseFloat(b);
 }
 
 function subtract(a,b) {
@@ -65,17 +65,30 @@ function divide(a,b){
 
 function setNumber(num) {
     if(operationButtonClicked == false){
-        firstNumber += num
+        firstNumber += num;
+        numberScreen.textContent = firstNumber;
     }
     else if(operationButtonClicked == true){
         secondNumber += num
+        numberScreen.textContent = `${firstNumber}  ${operation} ${secondNumber}`;
     }
 
-    parseInt(firstNumber);
-    parseInt(secondNumber);
+    parseFloat(firstNumber);
+    parseFloat(secondNumber);
 }
 
 //operation onClick
+
+decimalButton.addEventListener('click', () => {
+    if(operationButtonClicked == false){
+        firstNumber += ".";
+        numberScreen.textContent += '.';
+    }
+    else if(operationButtonClicked == true){
+        secondNumber += ".";
+        numberScreen.textContent += '.';
+    }
+})
 
 clearButton.addEventListener('click', () => {
     numberScreen.textContent = "";
@@ -88,18 +101,22 @@ clearButton.addEventListener('click', () => {
 
 addButton.addEventListener('click', () => {
     operation = '+';
+    numberScreen.textContent += " + ";
 });
 
 subtractButton.addEventListener('click', () => {
     operation = '-';
+    numberScreen.textContent += " - ";
 })
 
 multiplyButton.addEventListener('click', () => {
     operation = '*';
+    numberScreen.textContent += " * ";
 });
 
 divideButton.addEventListener('click', () => {
     operation = '/';
+    numberScreen.textContent += " / ";
 })
 
 equalsButton.addEventListener('click', () => {
