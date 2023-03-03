@@ -27,7 +27,7 @@ const twoButton = document.querySelector('.twoButton');
 const oneButton = document.querySelector('.oneButton');
 const zeroButton = document.querySelector('.zeroButton');
 
-//numbers to be used
+//global variables to be used
 
 let firstNumber = "";
 let secondNumber = "";
