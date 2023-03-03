@@ -46,6 +46,8 @@ let operation;
 //operation functions
 
 function add(a,b) {
+
+    //add parseFloat method to avoid string concatanation error
     return parseFloat(a) + parseFloat(b);
 }
 
