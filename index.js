@@ -121,16 +121,16 @@ divideButton.addEventListener('click', () => {
 
 equalsButton.addEventListener('click', () => {
     if(operation == '+'){
-        result = add(firstNumber,secondNumber);
+        result = add(firstNumber,secondNumber).toFixed(5);
         numberScreen.textContent = `${firstNumber} ${operation} ${secondNumber} = ${result}`;
     }else if(operation == '-'){
-        result = subtract(firstNumber,secondNumber);
+        result = subtract(firstNumber,secondNumber).toFixed(5);
         numberScreen.textContent = `${firstNumber} ${operation} ${secondNumber} = ${result}`;
     }else if(operation == '*'){
-        result = multiply(firstNumber,secondNumber);
+        result = multiply(firstNumber,secondNumber).toFixed(5);
         numberScreen.textContent = `${firstNumber} ${operation} ${secondNumber} = ${result}`;
     }else if(operation == '/'){
-        result = divide(firstNumber,secondNumber);
+        result = divide(firstNumber,secondNumber).toFixed(5);
         numberScreen.textContent = `${firstNumber} ${operation} ${secondNumber} = ${result}`;
     }
 })
